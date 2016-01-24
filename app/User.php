@@ -14,34 +14,34 @@ class User extends Model implements AuthenticatableContract,
                                     AuthorizableContract,
                                     CanResetPasswordContract
 {
-    use Authenticatable, Authorizable, CanResetPassword;
+  use Authenticatable, Authorizable, CanResetPassword;
 
-    /**
-     * The database table used by the model.
-     *
-     * @var string
-     */
-    protected $table = 'users';
+  /**
+   * The database table used by the model.
+   *
+   * @var string
+   */
+  protected $table = 'users';
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
-    protected $fillable = ['name', 'email', 'password'];
+  /**
+   * The attributes that are mass assignable.
+   *
+   * @var array
+   */
+  protected $fillable = ['name', 'email', 'password'];
 
-    /**
-     * The attributes excluded from the model's JSON form.
-     *
-     * @var array
-     */
-    protected $hidden = ['password', 'remember_token'];
+  /**
+   * The attributes excluded from the model's JSON form.
+   *
+   * @var array
+   */
+  protected $hidden = ['password', 'remember_token'];
 
-    /**
-     * Get all of the tasks for the user.
-     */
-    public function tasks()
-    {
-        return $this->hasMany(Task::class);
-    }
+  /**
+   * Get all of the tasks for the user.
+   */
+  public function tasks()
+  {
+    return $this->hasMany(Task::class);
+  }
 }
